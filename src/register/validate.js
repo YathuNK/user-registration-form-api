@@ -92,20 +92,20 @@ const validatePhoneNumber = (value) => {
 
 const validate = (user) => {
 	try {
-        let dob=user.dob?.split("T")[0]
+        let dob=user.dob && user.dob.split("T")[0]
 		user = {
-			firstName: user.firstName?.trim(),
-			lastName: user.lastName?.trim(),
-			userName: user.userName?.trim(),
-			password: user.password?.trim(),
+			firstName: user.firstName && user.firstName.trim(),
+			lastName: user.lastName && user.lastName.trim(),
+			userName: user.userName && user.userName.trim(),
+			password: user.password && user.password.trim(),
 			dob: dob,
-			email: user.email?.trim(),
-			country: user.country?.trim(),
-			state: user.state?.trim(),
-			mobileCountryCode: user.mobileCountryCode?.trim(),
-			mobileNumber: user.mobileNumber?.toString()?.trim(),
-			phoneCountryCode: user.phoneCountryCode?.trim(),
-			phoneNumber: user.phoneNumber?.toString()?.trim(),
+			email: user.email && user.email.trim(),
+			country: user.country && user.country.trim(),
+			state: user.state && user.state.trim(),
+			mobileCountryCode: user.mobileCountryCode && user.mobileCountryCode.trim(),
+			mobileNumber: user.mobileNumber && user.mobileNumber.toString().trim(),
+			phoneCountryCode: user.phoneCountryCode && user.phoneCountryCode.trim(),
+			phoneNumber: user.phoneNumber && user.phoneNumber.toString().trim(),
 		};
 
 		if (

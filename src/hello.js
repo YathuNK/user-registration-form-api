@@ -1,5 +1,6 @@
 "use strict";
 
+// default hello function
 const hello = async (event) => {
   return {
     statusCode: 200,

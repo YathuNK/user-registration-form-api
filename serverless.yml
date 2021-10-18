@@ -38,21 +38,18 @@ functions:
                   method: get
     register:
         handler: src/register/register.handler
-        runtime: nodejs14.x
         events:
             - httpApi:
                   path: /users
                   method: post
     login:
         handler: src/login.handler
-        runtime: nodejs14.x
         events:
             - httpApi:
                   path: /users/login
                   method: post
     getUser:
         handler: src/getUser.handler
-        runtime: nodejs14.x
         events:
             - httpApi:
                   path: /users

@@ -1,3 +1,4 @@
+// set custom headers and send response
 function buildResponse(statusCode, body) {
 	return {
 		statusCode: statusCode,

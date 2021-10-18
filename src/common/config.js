@@ -1,3 +1,4 @@
+// enviroument variables
 module.exports = {
 	database: {
 		host: "database-1.ccvkbas1wlv4.us-east-1.rds.amazonaws.com",
