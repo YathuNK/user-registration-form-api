@@ -1,0 +1,59 @@
+service: user-registration-api
+frameworkVersion: "2"
+
+provider:
+    name: aws
+    runtime: nodejs10.x
+    lambdaHashingVersion: "20201221"
+    region: us-east-1
+    stage: dev
+    iamRoleStatements:
+        - Effect: "Allow"
+          Action:
+              - ec2:CreateNetworkInterface
+              - ec2:DescribeNetworkInterfaces
+              - ec2:DeleteNetworkInterface
+          Resource:
+              - "*"
+    vpc:
+        securityGroupIds:
+            - sg-07d177fa6fcc03117
+            - sg-0bfe34fcfd96b8505
+        subnetIds:
+            - subnet-0689faa24666dbf79
+            - subnet-04e44a9ce65152e4d
+            - subnet-0dc208be62a5a72ef
+            - subnet-03a4265714744d6b9
+            - subnet-06579ea3449edc086
+            - subnet-0926e9818dfc84a9e
+    httpApi:
+        cors: true
+
+functions:
+    hello:
+        handler: src/hello.handler
+        events:
+            - httpApi:
+                  path: /
+                  method: get
+    register:
+        handler: src/register/register.handler
+        runtime: nodejs14.x
+        events:
+            - httpApi:
+                  path: /users
+                  method: post
+    login:
+        handler: src/login.handler
+        runtime: nodejs14.x
+        events:
+            - httpApi:
+                  path: /users/login
+                  method: post
+    getUser:
+        handler: src/getUser.handler
+        runtime: nodejs14.x
+        events:
+            - httpApi:
+                  path: /users
+                  method: get
