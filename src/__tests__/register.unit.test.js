@@ -1,6 +1,6 @@
-const countryList = require("../countryList");
-const countryCodeList = require("../countryCodeList");
-const validate = require("../validate");
+const countryList = require("../register/countryList");
+const countryCodeList = require("../register/countryCodeList");
+const validate = require("../register/validate");
 
 test("ContryList is a valid object", () => {
 	expect(typeof countryList).toBe("object");

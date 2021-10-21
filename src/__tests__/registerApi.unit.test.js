@@ -1,4 +1,4 @@
-const register = require("../register");
+const register = require("../register/register");
 
 beforeAll(() => jest.setTimeout(10 * 1000))
 

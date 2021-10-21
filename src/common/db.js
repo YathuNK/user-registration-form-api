@@ -19,7 +19,7 @@ var db = (function () {
 		});
 		mysql.connect();
 
-		// Private  variable
+		// Public  variable
 		return mysql;
 	}
 
